@@ -30,7 +30,7 @@ const CompanyFilter = ({ onFilter }) => {
       setCompany(companyQuery);
       onFilter(companyQuery);
     }
-  }, [location.search]); // Only run when location.search changes
+  }, [location.search]);
 
   const handleChange = (e) => {
     const value = e.target.value;

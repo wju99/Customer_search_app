@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { TextField, Box } from '@mui/material';
-import _ from 'lodash'; // Import lodash for debouncing
+import _ from 'lodash';
 
 const SearchBar = ({ onSearch }) => {
   const [search, setSearch] = useState('');
@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
       setSearch(searchQuery);
       onSearch(searchQuery);
     }
-  }, [location.search]); // Only run when location.search changes
+  }, [location.search]);
 
   const debouncedSearch = useCallback(
     _.debounce((query) => {

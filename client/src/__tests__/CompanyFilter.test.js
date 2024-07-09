@@ -9,6 +9,7 @@ jest.mock('axios');
 
 describe('CompanyFilter', () => {
   test('renders company filter and loads company options', async () => {
+    // Mock list of companies from API call
     axios.get.mockResolvedValue({ data: ['Company A', 'Company B'] });
 
     render(
@@ -17,13 +18,13 @@ describe('CompanyFilter', () => {
       </Router>
     );
 
-    // Ensure the filter label is rendered
+    // Check filter label is rendered
     expect(screen.getByLabelText(/filter by company/i)).toBeInTheDocument();
 
-    // Open the dropdown
+    // Open dropdown
     fireEvent.mouseDown(screen.getByLabelText(/filter by company/i));
 
-    // Ensure the options are rendered
+    // Check options are rendered
     await waitFor(() => {
       expect(screen.getByText('Company A')).toBeInTheDocument();
       expect(screen.getByText('Company B')).toBeInTheDocument();

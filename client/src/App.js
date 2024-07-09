@@ -12,26 +12,28 @@ const App = () => {
   const [customers, setCustomers] = useState([]);
 
   const fetchCustomers = async (query) => {
-    setCustomers([]); // Clear current customers
+    // Clear current customers
+    setCustomers([]); 
     try {
       const response = await axios.get(`http://localhost:5001/api/customers/search?name=${query}`);
       console.log('Search Response:', response.data);
-      setCustomers(response.data || []); // Ensure response data is an array
+      setCustomers(response.data || []);
     } catch (error) {
       console.error('Error fetching customers:', error);
-      setCustomers([]); // Ensure empty state on error
+      // Set empty state on error
+      setCustomers([]); 
     }
   };
 
   const fetchCustomersByCompany = async (company) => {
-    setCustomers([]); // Clear current customers
+    setCustomers([]);
     try {
       const response = await axios.get(`http://localhost:5001/api/customers/filter?company=${company}`);
       console.log('Filter Response:', response.data);
-      setCustomers(response.data || []); // Ensure response data is an array
+      setCustomers(response.data || []);
     } catch (error) {
       console.error('Error fetching customers:', error);
-      setCustomers([]); // Ensure empty state on error
+      setCustomers([]); 
     }
   };
 
@@ -39,8 +41,8 @@ const App = () => {
     <Router>
       <Container className="container">
         <Box className="header">
-          <img src={logo} alt="Logo" className="logo" /> {/* Use the imported logo */}
-          <Typography variant="h4" gutterBottom> {/* Use h4 variant for smaller font size */}
+          <img src={logo} alt="Logo" className="logo" /> {}
+          <Typography variant="h4" gutterBottom> {}
             Customer Filters
           </Typography>
         </Box>

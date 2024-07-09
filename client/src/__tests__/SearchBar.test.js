@@ -14,15 +14,15 @@ describe('SearchBar', () => {
       </Router>
     );
 
-    // Ensure the search input is rendered
+    // Check search input is rendered
     expect(screen.getByLabelText(/search by name/i)).toBeInTheDocument();
 
-    // Type in the search input
+    // Type in search input
     fireEvent.change(screen.getByLabelText(/search by name/i), {
       target: { value: 'test search' },
     });
 
-    // Ensure the input value is updated and onSearch is called
+    // Check input value is updated, onSearch is called
     await waitFor(() => {
       expect(screen.getByLabelText(/search by name/i)).toHaveValue('test search');
     });
