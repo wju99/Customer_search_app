@@ -1,10 +1,10 @@
-# Customer Search/Filter Application
+# New Relic Take Home Assessment
 
 This project is a customer searching and filtering application built with a React frontend and a Node backend, which communicates with a Firestore database. The application allows users to search for customers by first or last name and filter customers by company name.
 
 ## Architectural Choices
 
-- **Express.js**: I chose to use Express due to simplicity and familiarity. I'm very familiar with the framework and have lots of experience building web applications on it.
+- **React / Node**: I chose to use React for the frontend and Node for the backend because I'm very familiar with building web applications in those frameworks.
 - **Firestore**: I chose Firebase Cloud Firestore for the database because it is very easy to set up and effective for small projects. Firestore provides a non-relational database without the need for managing database servers. I chose to go with a non-relational database instead of a relational one because I opted to implement the filter and search functionality. In my opinion, none of the queries were complex enough to warrant usinga relational database instead. However, if I had chosen to implement the Sort functionality, I would definitely have considered using a relational database such as Postgres.
 
 ## Table of Contents
@@ -79,6 +79,7 @@ This project is a customer searching and filtering application built with a Reac
     ```sh
     npm start
     ```
+    Note: The application should be running on localhost port 3000 by default
 
 ### Frontend Components
 
