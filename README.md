@@ -1,6 +1,6 @@
-# Customer Management Application
+# Customer Search/Filter Application
 
-This project is a customer management application built with a React frontend and a Node backend, which communicates with a Firestore database. The application allows users to search for customers by name and filter customers by company name.
+This project is a customer searching and filtering application built with a React frontend and a Node backend, which communicates with a Firestore database. The application allows users to search for customers by first or last name and filter customers by company name.
 
 ## Architectural Choices
 
