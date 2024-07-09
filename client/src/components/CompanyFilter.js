@@ -42,8 +42,13 @@ const CompanyFilter = ({ onFilter }) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, marginBottom: 2 }}>
       <FormControl fullWidth margin="normal">
-        <InputLabel>Filter by company</InputLabel>
-        <Select value={company} onChange={handleChange} label="Filter by company">
+        <InputLabel id="company-filter-label">Filter by company</InputLabel>
+        <Select
+          labelId="company-filter-label"
+          value={company}
+          onChange={handleChange}
+          label="Filter by company"
+        >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
