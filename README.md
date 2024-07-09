@@ -2,6 +2,11 @@
 
 This project is a customer management application built with a React frontend and a Node backend, which communicates with a Firestore database. The application allows users to search for customers by name and filter customers by company name.
 
+## Architectural Choices
+
+- **Express.js**: I chose to use Express due to simplicity and familiarity. I'm very familiar with the framework and have lots of experience building web applications on it.
+- **Firestore**: I chose Firebase Cloud Firestore for the database because it is very easy to set up and effective for small projects. Firestore provides a non-relational database without the need for managing database servers. I chose to go with a non-relational database instead of a relational one because I opted to implement the filter and search functionality. In my opinion, none of the queries were complex enough to warrant usinga relational database instead. However, if I had chosen to implement the Sort functionality, I would definitely have considered using a relational database such as Postgres.
+
 ## Table of Contents
 
 1. [Backend Server](#backend-server)
