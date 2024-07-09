@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch }) => {
 
   const debouncedSearch = useCallback(
     _.debounce((query) => {
-        navigate(`?search=${query}`);
+      navigate(`?search=${query}`);
       onSearch(query);
     }, 300),
     []
@@ -40,6 +40,7 @@ const SearchBar = ({ onSearch }) => {
         margin="normal"
         value={search}
         onChange={handleChange}
+        inputProps={{ 'aria-label': 'search by name' }}
       />
     </Box>
   );
