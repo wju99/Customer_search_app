@@ -29,6 +29,9 @@ This project is a customer searching and filtering application built with a Reac
 
 2. **Set up Firestore**:
     - Ensure you have the `firebaseAdminConfig.js` file in the `backend` directory with your Firebase configuration.
+    - Replace serviceAccountKey.json with this file
+   [Google Drive File](https://drive.google.com/file/d/1eNqavF6YQAekizP5sHvat5Wl97pL1WZw/view?usp=sharing)
+
 
 3. **Run the server**:
     ```sh
