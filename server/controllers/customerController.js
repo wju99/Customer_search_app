@@ -3,16 +3,18 @@ import db from '../firebaseAdminConfig.js';
 // Search customers by first or last name
 export const searchCustomers = async (req, res) => {
     try {
+        console.log('Received request to search customers');
         const { name } = req.query;
-        const customersRef = db.collection('customers');
+        console.log(`Searching customers with name: ${name}`);
         
-        // Create match first name and match last name queries
+        const customersRef = db.collection('customers');
         const firstNameQuery = customersRef.where('firstName', '==', name).get();
         const lastNameQuery = customersRef.where('lastName', '==', name).get();
 
         const [firstNameSnapshot, lastNameSnapshot] = await Promise.all([firstNameQuery, lastNameQuery]);
 
         if (firstNameSnapshot.empty && lastNameSnapshot.empty) {
+            console.log('No matching customers found');
             return res.status(404).json({ message: 'No matching customers found' });
         }
 
@@ -34,8 +36,10 @@ export const searchCustomers = async (req, res) => {
             ))
         );
 
+        console.log(`Found ${customers.length} matching customers`);
         res.json(customers);
     } catch (error) {
+        console.error('Error searching customers:', error);
         res.status(500).json({ error: 'Server Error' });
     }
 };
@@ -43,11 +47,15 @@ export const searchCustomers = async (req, res) => {
 // Filter customers by company name
 export const filterCustomers = async (req, res) => {
     try {
+        console.log('Received request to filter customers by company');
         const { company } = req.query;
+        console.log(`Filtering customers with company: ${company}`);
+
         const customersRef = db.collection('customers');
         const snapshot = await customersRef.where('companyName', '==', company).get();
 
         if (snapshot.empty) {
+            console.log('No matching customers found');
             return res.status(404).json({ message: 'No matching customers found' });
         }
 
@@ -56,8 +64,10 @@ export const filterCustomers = async (req, res) => {
             customers.push({ id: doc.id, ...doc.data() });
         });
 
+        console.log(`Found ${customers.length} matching customers`);
         res.json(customers);
     } catch (error) {
+        console.error('Error filtering customers:', error);
         res.status(500).json({ error: 'Server Error' });
     }
 };
@@ -65,13 +75,18 @@ export const filterCustomers = async (req, res) => {
 // Get list of all company names from database
 export const getCompanyNames = async (req, res) => {
     try {
-      const snapshot = await db.collection('customers').get();
-      const companyNames = new Set();
-      snapshot.forEach(doc => {
-        companyNames.add(doc.data().companyName);
-      });
-      res.json(Array.from(companyNames));
+        console.log('Received request to get company names');
+        const snapshot = await db.collection('customers').get();
+        const companyNames = new Set();
+        snapshot.forEach(doc => {
+            companyNames.add(doc.data().companyName);
+        });
+
+        const companyNamesArray = Array.from(companyNames);
+        console.log(`Found ${companyNamesArray.length} unique company names`);
+        res.json(companyNamesArray);
     } catch (error) {
-      res.status(500).send('Error fetching company names');
+        console.error('Error fetching company names:', error);
+        res.status(500).send('Error fetching company names');
     }
 };
