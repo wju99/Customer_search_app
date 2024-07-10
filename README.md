@@ -44,7 +44,7 @@ This project is a customer searching and filtering application built with a Reac
 - **Query Parameters**:
   - `name`: The name to search for.
 - **Response**: 
-  - `200`: Returns an array of matching customers.
+  - `200`: Returns an array of customers matching searched name.
   - `404`: No matching customers found.
   - `500`: Server error.
 
@@ -54,7 +54,7 @@ This project is a customer searching and filtering application built with a Reac
 - **Query Parameters**:
   - `company`: The company name to filter by.
 - **Response**:
-  - `200`: Returns an array of customers from the specified company.
+  - `200`: Returns an array of customers with the given company name.
   - `404`: No matching customers found.
   - `500`: Server error.
 
@@ -62,7 +62,7 @@ This project is a customer searching and filtering application built with a Reac
 
 - **Description**: Get a list of all company names from the database.
 - **Response**:
-  - `200`: Returns an array of company names.
+  - `200`: Returns an array of all company names.
   - `500`: Error fetching company names.
 
 ## Frontend Client
