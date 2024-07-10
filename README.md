@@ -21,7 +21,7 @@ This project is a customer searching and filtering application built with a Reac
 
 ### Setup
 
-0. **Install NPM**:
+0. **Install Npm**:
   Npm is required to run this repository. [Follow these instructions to install NPM](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac)
 
 2. **Install dependencies**:
