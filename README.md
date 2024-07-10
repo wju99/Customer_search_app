@@ -21,19 +21,22 @@ This project is a customer searching and filtering application built with a Reac
 
 ### Setup
 
-1. **Install dependencies**:
+0. **Install NPM**:
+  Npm is required to run this repository. [Follow these instructions to install NPM](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac)
+
+2. **Install dependencies**:
    ```sh
    cd client
    npm install
    ```
 
-2. **Set up Firestore**:
+3. **Set up Firestore**:
     - Ensure you have the `firebaseAdminConfig.js` file in the `backend` directory with your Firebase configuration.
     - Replace serviceAccountKey.json with this file inside of the server folder. If there is no serviceAccountKey.json, make one.
    [Google Drive File](https://drive.google.com/file/d/1eNqavF6YQAekizP5sHvat5Wl97pL1WZw/view?usp=sharing)
 
 
-3. **Run the server**:
+4. **Run the server**:
     ```sh
     npm start
     ```
