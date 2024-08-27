@@ -2,11 +2,6 @@
 
 This project is a customer searching and filtering application built with a React frontend and a Node backend, which communicates with a Firestore database. The application allows users to search for customers by first or last name and filter customers by company name.
 
-## Architectural Choices
-
-- **React / Node**: I chose to use React for the frontend and Node for the backend because I'm very familiar with building web applications in those frameworks.
-- **Firestore**: I chose Firebase Cloud Firestore for the database because it is very easy to set up and effective for small projects. I chose to go with a non-relational database over a relational one because I opted to implement the filter and search functionality. In my opinion, none of the queries were complex enough to warrant usinga relational database instead. However, if I had chosen to implement the Sort functionality, I would definitely have considered using a relational database such as Postgres.
-
 ## Table of Contents
 
 1. [Backend Server](#backend-server)
